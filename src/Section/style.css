@@ -1,0 +1,21 @@
+.section {
+    background-color: rgba(255, 255, 255, 0.951);
+    border-radius: 20px;
+    margin: 10px 0;
+  }
+  
+  .section__header {
+    padding: 20px;
+    margin: 0;
+    border-bottom: 1px solid grey;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .section__body {
+    padding: 20px;
+  }
+  
