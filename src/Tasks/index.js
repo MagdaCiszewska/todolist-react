@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Tasks = ({ tasks, hideDoneTasks }) => {
+const Tasks = ({ tasks, hideDoneTasks, removeTask, toggleTaskDone }) => {
   return (
   <ul className="tasks">
     {tasks.map(task => (
@@ -10,7 +10,7 @@ const Tasks = ({ tasks, hideDoneTasks }) => {
           task.done && hideDoneTasks ? "tasks__item--hidden" : ""
         }`}
       >
-        <button className="tasks__button tasks__button--toggleDone">
+        <button onClick={() => toggleTaskDone(task.id)} className="tasks__button tasks__button--toggleDone">
           {task.done ? "✔" : ""}
         </button>
         <span
@@ -20,7 +20,7 @@ const Tasks = ({ tasks, hideDoneTasks }) => {
         >
           {task.content}
         </span>
-        <button className="tasks__button tasks__button--remove">🗑️</button>
+        <button onClick={() => removeTask(task.id)} className="tasks__button tasks__button--remove">🗑️</button>
       </li>
     ))}
   </ul>
